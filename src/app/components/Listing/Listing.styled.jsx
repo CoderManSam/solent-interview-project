@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 export const List = styled.ul`
     background: #dbe3ff;
     padding: 5rem;
-
 `;
 
 export const ListItem = styled.li`
@@ -14,6 +13,9 @@ export const ListItem = styled.li`
     border-radius: 5px
     margin: 1rem
     background-color: white
+    &:hover {
+        border: 2px solid green;
+    }
 `;
 
 export const Thumbnail = styled.img`

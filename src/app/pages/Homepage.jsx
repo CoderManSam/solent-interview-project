@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from "react";
 import Example from 'Components/Example/Example';
 import Listing from 'App/components/Listing/Listing';
+import Hero from 'App/components/Hero/Hero';
 
 const Homepage = () => {
     const [randomUsers, setRandomUsers] = useState([])
@@ -35,7 +36,8 @@ const Homepage = () => {
 
     return (
         <>
-            <Example />
+            {/* <Example /> */}
+            <Hero />
             {filteredUsers.length ? <Listing randomUsers={randomUsers} filteredUsers={filteredUsers}/> : null}
         </>
     );
