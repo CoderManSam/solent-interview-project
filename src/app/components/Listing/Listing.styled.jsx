@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
 export const List = styled.ul`
     background: #dbe3ff;
@@ -19,5 +20,7 @@ export const Thumbnail = styled.img`
     border-radius: 50%
 `;
 
-export const CircleArrow = styled.img`
+export const ProfileLink = styled(Link)`
+    text-decoration: none
+    color: black
 `;

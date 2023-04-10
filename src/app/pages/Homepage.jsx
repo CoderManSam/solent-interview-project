@@ -7,7 +7,7 @@ const Homepage = () => {
     const [randomUsers, setRandomUsers] = useState([])
     const [filteredUsers, setFilteredUsers] = useState([])
 
-    const getAllClasses = async () => {
+    const getRandomUsers = async () => {
         const requestOptions = {
             method: "GET",
             headers: {
@@ -30,7 +30,7 @@ const Homepage = () => {
     };
 
     useEffect(() => {
-        getAllClasses()    
+        getRandomUsers()    
     }, [])
 
     return (
