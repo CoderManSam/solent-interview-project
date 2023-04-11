@@ -1,37 +1,29 @@
 import React from 'react';
+import { HeroContainer, SearchBox, SearchForm, SearchIcon, Title, UnderTitle } from './Hero.styled';
+import SearchSVG from 'Public/icons/seach.svg';
 
-import { HeroContainer, Title, UnderTitle } from './Hero.styled';
-import PhoneSVG from 'Public/icons/phone.svg';
+const Hero = (props) => {
+    const {randomUsers, filteredUsers, setFilteredUsers, searchInput, setSearchInput} = props
 
-import worldImageURL from 'Public/images/world.png';
+    const handleChange = (e) => {
+        e.preventDefault()
+        setSearchInput(e.target.value)
+        console.log("searchInput", searchInput)
 
-
-const Hero = () => {
-    // const {randomUsers, filteredUsers} = props
-    // console.log("filteredUsers", filteredUsers)
+        const newFilteredUsers = randomUsers.filter(user => user.name.first.toLowerCase().includes(e.target.value) || user.name.last.toLowerCase().includes(e.target.value))
+        setFilteredUsers([...newFilteredUsers])
+        console.log("newFilteredUsers", newFilteredUsers)
+    }
 
     return(
         <HeroContainer>
             <Title>Find a member of staff</Title>
             <UnderTitle>Use the search box to get started</UnderTitle>
+            <SearchForm>
+                <SearchIcon/>
+                <SearchBox  placeholder='Start typing...'  value={searchInput} onChange={(e) => handleChange(e)}></SearchBox>
+            </SearchForm>
         </HeroContainer>
-        // <List>
-        //     {filteredUsers.map((user, index) => (
-        //         // <ProfileLink to="/profile" state={{user: true}}>
-        //         <ProfileLink to={{pathname: "/profile", state: {user}}}>
-        //             <ListItem
-        //             // index used as some users did not have ID values, using another user key/value would be risky as a different user may share the same key/value
-        //             key={index}
-        //             >
-        //                 <Thumbnail src={user.picture.thumbnail} alt="User thumbnail"/>   
-
-        //                 {user.name.first} {user.name.last} 
-
-        //                 <CircleArrowSVG alt="Circle arrow icon"/>
-        //             </ListItem>
-        //         </ProfileLink>
-        //     ))}
-        // </List>
     )
 };
 

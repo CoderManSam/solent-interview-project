@@ -14,7 +14,7 @@ export const ListItem = styled.li`
     margin: 1rem
     background-color: white
     &:hover {
-        border: 2px solid green;
+        border: 1px solid yellow;
     }
 `;
 

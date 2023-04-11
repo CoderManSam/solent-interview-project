@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useState } from "react";
-import Example from 'Components/Example/Example';
 import Listing from 'App/components/Listing/Listing';
 import Hero from 'App/components/Hero/Hero';
 
 const Homepage = () => {
     const [randomUsers, setRandomUsers] = useState([])
     const [filteredUsers, setFilteredUsers] = useState([])
+    const [searchInput, setSearchInput] = useState('')
 
     const getRandomUsers = async () => {
         const requestOptions = {
@@ -36,8 +36,7 @@ const Homepage = () => {
 
     return (
         <>
-            {/* <Example /> */}
-            <Hero />
+            <Hero randomUsers={randomUsers} filteredUsers={filteredUsers} setFilteredUsers={setFilteredUsers} searchInput={searchInput} setSearchInput={setSearchInput}/>
             {filteredUsers.length ? <Listing randomUsers={randomUsers} filteredUsers={filteredUsers}/> : null}
         </>
     );
