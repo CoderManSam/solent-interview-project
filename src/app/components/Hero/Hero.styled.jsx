@@ -1,10 +1,8 @@
-import React from 'react';
-
 import styled from 'styled-components';
 import backgroundImageURL from 'Public/images/background.jpg';
 import SearchSVG from 'Public/icons/seach.svg';
 
-export const HeroContainer = styled.div`
+export const HeroContainer = styled.header`
     background: url(${backgroundImageURL});
     height: auto;
     padding: 195px 24% 70px 

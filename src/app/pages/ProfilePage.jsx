@@ -1,15 +1,12 @@
 import React from 'react';
-import { useState } from "react";
-import Example from 'Components/Example/Example';
 import Profile from 'Components/Profile/Profile';
+import Hero from 'App/components/Hero/Hero';
 
 const ProfilePage = () => {
-    const [randomUsers, setRandomUsers] = useState([])
-    const [filteredUsers, setFilteredUsers] = useState([])
 
     return (
         <>
-            <Example />
+            <Hero />
             <Profile />
         </>
     );

@@ -2,10 +2,14 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 import CircleArrowSVG from 'Public/icons/circle-arrow.svg';
 
-export const List = styled.ul`
+export const ListingContainer = styled.main`
     background: #ECECEC;
     padding: 75px 24% 225px 
     margin: 0;
+`;
+
+export const List = styled.ul`
+    padding: 0
 `;
 
 export const ProfileLink = styled(Link)`

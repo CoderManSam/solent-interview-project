@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
-export const ProfileIdentification = styled.div`
-    background: #dbe3ff;
+export const ProfileContainer = styled.main`
+    background: #ECECEC;
     padding: 5rem;
 `;
 
-export const ProfileInformation = styled.div`
-    background: #dbe3ff;
-    padding: 5rem;
+export const ProfileIdentification = styled.section`
+`;
+
+export const ProfileInformation = styled.section`
 `;
 
 export const AvatarCircle = styled.div`

@@ -8,7 +8,7 @@ const Homepage = () => {
     const [filteredUsers, setFilteredUsers] = useState([])
     const [searchInput, setSearchInput] = useState('')
 
-    const getRandomUsers = async () => {
+    const getTenRandomUsers = async () => {
         const requestOptions = {
             method: "GET",
             headers: {
@@ -31,13 +31,13 @@ const Homepage = () => {
     };
 
     useEffect(() => {
-        getRandomUsers()    
+        getTenRandomUsers()    
     }, [])
 
     return (
         <>
-            <Hero randomUsers={randomUsers} filteredUsers={filteredUsers} setFilteredUsers={setFilteredUsers} searchInput={searchInput} setSearchInput={setSearchInput}/>
-            {filteredUsers.length ? <Listing randomUsers={randomUsers} filteredUsers={filteredUsers}/> : null}
+            <Hero randomUsers={randomUsers} setFilteredUsers={setFilteredUsers} searchInput={searchInput} setSearchInput={setSearchInput}/>
+            <Listing filteredUsers={filteredUsers}/>
         </>
     );
 };
