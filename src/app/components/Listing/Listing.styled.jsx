@@ -6,6 +6,10 @@ export const ListingContainer = styled.main`
     background: #ECECEC;
     padding: 75px 24% 225px 
     margin: 0;
+    text-align: center;
+    @media (max-width: 860px) {
+        zoom: 0.4
+    };
 `;
 
 export const List = styled.ul`
@@ -46,3 +50,7 @@ export const CircleArrowIcon = styled(CircleArrowSVG)`
     margin-left:auto
     padding-right: 8px
 `;
+
+export const ErrorMessage = styled.strong`
+    font-size: 32px
+`; 

@@ -7,6 +7,21 @@ export const HeroContainer = styled.header`
     height: auto;
     padding: 195px 24% 70px 
     background-size: cover;
+    @media (max-width: 860px) {
+        padding: 10%
+        zoom: 0.4
+        text-align: center;
+    };
+`;
+
+export const ProfilePageHeroContainer = styled.header`
+    background: url(${backgroundImageURL});
+    height: auto;
+    padding: 195px 24% 70px 
+    background-size: cover;
+    @media (max-width: 540px) {
+        display: none
+    };
 `;
 
 export const Title = styled.h1`

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from "react-router";
 
-import { ProfileIdentification, ProfileInformation, Avatar, AvatarCircle, ProfileContainer } from './Profile.styled';
+import { ProfileIdentification, ProfileInformation, Avatar, ProfileContainer, ProfileUsersName, Email, Dob, Phone } from './Profile.styled';
 import PhoneSVG from 'Public/icons/phone.svg';
 import DobSVG from 'Public/icons/dob.svg';
 import EmailSVG from 'Public/icons/email.svg';
@@ -24,23 +24,38 @@ const Profile = () => {
 
     return(
         <ProfileContainer>
+
             <ProfileIdentification>
 
-                <AvatarCircle>
-                    <Avatar src={user.picture.large} alt={`${user.name.first} ${user.name.last} avatar`}/> 
-                </AvatarCircle>
+                <Avatar src={user.picture.large} alt={`${user.name.first} ${user.name.last} avatar`}/> 
 
-                {user.name.first} {user.name.last} 
+                <ProfileUsersName>
+
+                    {user.name.first} {user.name.last} 
+
+                </ProfileUsersName>
 
             </ProfileIdentification>
+
             <ProfileInformation>
-                <EmailSVG alt="Email icon"/>
-                {user.email}
-                <DobSVG alt="Date of birth icon"/>
-                {dob}
-                <PhoneSVG alt="Phone icon"/>
-                {user.phone}
+
+                <Email>
+                    <EmailSVG alt="Email icon"/>
+                    {user.email}
+                </Email>
+
+                <Dob>
+                    <DobSVG alt="Date of birth icon"/>
+                    {dob}
+                </Dob>
+
+                <Phone>
+                    <PhoneSVG alt="Phone icon"/>
+                    {user.phone}
+                </Phone>
+
             </ProfileInformation>
+
         </ProfileContainer>
     )
 };
